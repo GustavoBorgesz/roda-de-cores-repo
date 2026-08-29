@@ -49,7 +49,7 @@ Fluxo:
 3. As cores predominantes são exibidas.
 4. Clique em uma delas para utilizá-la como cor base.
 
-### 📋 Paletas
+### 🧰 Chromatica 2.1 — Ferramentas avançadas\n\n- Exportação de paletas em **PNG**\n- Exportação em **CSS** com variáveis personalizadas\n- Geração automática de gradientes\n- Análise de contraste seguindo níveis **WCAG**\n- Recomendação automática de texto preto ou branco\n- Compartilhamento de paletas por URL\n\n### 📋 Paletas
 
 - Geração automática de paletas
 - Copiar cores individualmente
@@ -180,12 +180,12 @@ Também pode ser utilizado como ferramenta auxiliar em projetos de:
 
 Algumas ideias para próximas versões:
 
-- [ ] Exportar paletas em PNG
-- [ ] Exportar paletas em CSS
-- [ ] Gerar gradientes automaticamente
-- [ ] Análise de contraste WCAG
-- [ ] Sugestões de cores para texto
-- [ ] Compartilhamento de paletas por URL
+- [x] Exportar paletas em PNG
+- [x] Exportar paletas em CSS
+- [x] Gerar gradientes automaticamente
+- [x] Análise de contraste WCAG
+- [x] Sugestões de cores para texto
+- [x] Compartilhamento de paletas por URL
 - [ ] Sistema de favoritos sincronizado
 - [ ] Histórico visual de paletas
 - [ ] Gerador de paletas baseado em inteligência artificial
