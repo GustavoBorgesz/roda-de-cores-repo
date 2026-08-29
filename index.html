@@ -1,81 +1,50 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ferramenta interativa para estudar teoria das cores e criar paletas harmoniosas.">
-  <title>Chromatica — Roda de Cores</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Chromatica: ferramenta interativa para explorar teoria das cores e criar paletas.">
+<title>Chromatica — Roda de Cores</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#" aria-label="Chromatica - início"><span class="brand-mark">◈</span> CHROMATICA</a>
-    <div class="header-actions">
-      <button id="themeToggle" class="icon-btn" type="button" aria-label="Alternar tema">☀</button>
-      <button id="randomBtn" class="btn btn-primary" type="button">Cor aleatória <span>↻</span></button>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="intro">
-      <div>
-        <p class="eyebrow">LABORATÓRIO DE CORES</p>
-        <h1>Explore. Combine.<br><em>Crie.</em></h1>
-        <p>Uma ferramenta visual para entender harmonia de cores, testar combinações e construir paletas para seus projetos.</p>
-      </div>
-      <div class="shortcut-hint">Dica: <kbd>Arraste</kbd> o marcador pela roda</div>
-    </section>
-
-    <section class="workspace">
-      <div class="card wheel-card">
-        <div class="card-head"><div><span class="number">01</span><h2>Escolha uma cor</h2></div><span id="hueBadge" class="badge">HUE 217°</span></div>
-        <div class="wheel-area">
-          <div id="colorWheel" class="color-wheel" role="slider" tabindex="0" aria-label="Selecionar matiz da cor" aria-valuemin="0" aria-valuemax="360" aria-valuenow="217"><div id="wheelMarker" class="wheel-marker"></div></div>
-        </div>
-        <div class="hsl-controls">
-          <label>Saturação <output id="satOut">85%</output><input id="satRange" type="range" min="0" max="100" value="85"></label>
-          <label>Luminosidade <output id="lightOut">55%</output><input id="lightRange" type="range" min="5" max="95" value="55"></label>
-        </div>
-      </div>
-
-      <aside class="card color-card">
-        <div class="preview" id="colorPreview"><span>PREVIEW</span></div>
-        <div class="color-title"><div><span class="eyebrow">COR ATUAL</span><h2 id="colorName">Azul</h2></div><button id="saveBtn" class="icon-btn" type="button" aria-label="Salvar paleta">♡</button></div>
-        <div class="hex-editor"><label for="hexInput">HEX</label><input id="hexInput" value="#3B82F6" maxlength="7" aria-label="Código HEX"><button id="applyHex" type="button">Aplicar</button></div>
-        <div class="values">
-          <button class="value" data-copy="rgb"><span>RGB</span><strong id="rgbValue">59, 130, 246</strong><small>Copiar</small></button>
-          <button class="value" data-copy="hsl"><span>HSL</span><strong id="hslValue">217°, 85%, 55%</strong><small>Copiar</small></button>
-        </div>
-      </aside>
-    </section>
-
-    <section class="card harmony-card">
-      <div class="card-head"><div><span class="number">02</span><h2>Escolha uma harmonia</h2></div><p>Como as cores se relacionam?</p></div>
-      <div id="harmonyButtons" class="harmony-tabs">
-        <button class="active" data-mode="complementary">Complementar</button><button data-mode="analogous">Análoga</button><button data-mode="triadic">Triádica</button><button data-mode="split">Dividida</button><button data-mode="tetradic">Tetrádica</button><button data-mode="monochromatic">Monocromática</button>
-      </div>
-    </section>
-
-    <section class="card palette-card">
-      <div class="card-head"><div><span class="number">03</span><h2>Sua paleta</h2></div><div class="actions"><button id="copyPalette" class="btn btn-outline" type="button">Copiar tudo</button><button id="clearSaved" class="btn btn-outline" type="button">Limpar salvos</button></div></div>
-      <div id="palette" class="palette"></div>
-      <div class="harmony-info"><div class="info-icon">✦</div><div><h3 id="harmonyTitle">Complementar</h3><p id="harmonyDescription">Cores opostas na roda cromática. Excelente para criar contraste e destacar elementos.</p></div></div>
-    </section>
-
-    <section class="saved-section" id="savedSection" hidden>
-      <div class="section-title"><div><p class="eyebrow">SUAS COLEÇÕES</p><h2>Paletas salvas</h2></div><span id="savedCount">0 paletas</span></div>
-      <div id="savedPalettes" class="saved-grid"></div>
-    </section>
-
-    <section class="learn-grid">
-      <article><span>◉</span><h3>Contraste</h3><p>Use cores complementares para criar pontos de destaque e hierarquia visual.</p></article>
-      <article><span>≈</span><h3>Harmonia</h3><p>Cores vizinhas produzem transições suaves e uma sensação visual consistente.</p></article>
-      <article><span>✦</span><h3>Experimente</h3><p>Não existe uma regra absoluta. Teste matiz, saturação e luminosidade até encontrar seu equilíbrio.</p></article>
-    </section>
-  </main>
-
-  <footer><p>CHROMATICA <span>•</span> Feito para estudar e experimentar com cores.</p></footer>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="script.js"></script>
-</body>
-</html>
+<div class="app">
+<header>
+<a class="brand" href="#">◈ <span>CHROMATICA</span></a>
+<div class="actions">
+<button id="undo" class="icon" title="Desfazer">↶</button><button id="redo" class="icon" title="Refazer">↷</button>
+<button id="random" class="primary">Aleatória ↻</button><button id="favorites" class="icon" title="Paletas salvas">♡ <b id="count"></b></button>
+<button id="theme" class="icon" title="Alternar tema">☀</button>
+</div>
+</header>
+<main>
+<aside>
+<div class="tabs"><button class="tab active" data-tab="wheel">Roda de cores</button><button class="tab" data-tab="image">Extrair de imagem</button></div>
+<section id="wheelTab">
+<div class="wheel-wrap"><div id="wheel" tabindex="0" aria-label="Selecionar cor na roda"><i id="marker"></i></div></div>
+<div class="sliders">
+<label>Saturação <output id="satOut">85%</output><input id="sat" type="range" min="0" max="100" value="85"></label>
+<label>Luminosidade <output id="lightOut">55%</output><input id="light" type="range" min="5" max="95" value="55"></label>
+</div>
+<p class="eyebrow">COR ATUAL</p><h2 id="name">Azul</h2>
+<div class="hex"><span>HEX</span><input id="hex" value="#3B82F6" maxlength="7"><button id="apply">Aplicar</button></div>
+<div class="values"><button data-copy="rgb">RGB <strong id="rgb">59, 130, 246</strong><small>Copiar</small></button><button data-copy="hsl">HSL <strong id="hsl">217°, 85%, 55%</strong><small>Copiar</small></button></div>
+</section>
+<section id="imageTab" hidden>
+<div id="drop" class="drop" tabindex="0">⤒<br><span>Solte uma imagem aqui<br>ou clique para escolher</span></div>
+<input id="image" type="file" accept="image/*" hidden><canvas id="canvas" hidden></canvas>
+<p class="hint">As cores dominantes aparecerão abaixo. Clique em uma para usá-la como base.</p><div id="imageColors" class="image-colors"></div>
+</section>
+<section class="harmony"><p class="eyebrow">HARMONIA</p><div id="modes">
+<button class="active" data-mode="complementary">Complementar</button><button data-mode="analogous">Análoga</button><button data-mode="triadic">Triádica</button><button data-mode="split">Dividida</button><button data-mode="tetradic">Tetrádica</button><button data-mode="monochromatic">Monocromática</button>
+</div><p id="description">Cores opostas na roda cromática. Excelente para criar contraste e destacar elementos.</p></section>
+</aside>
+<section class="stage" id="palette"><div class="stage-actions"><button id="copyPalette" class="icon">⧉</button><button id="save" class="icon">♡</button></div></section>
+</main>
+</div>
+<div id="scrim" hidden></div>
+<aside id="drawer" hidden><div class="drawer-head"><h2>Paletas salvas</h2><button id="close" class="icon">✕</button></div><p id="empty">Nenhuma paleta salva ainda.</p><div id="saved"></div><button id="clear">Limpar todas</button></aside>
+<div id="toast" role="status"></div>
+<script src="script.js"></script>
+</body></html>
