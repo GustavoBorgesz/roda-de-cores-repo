@@ -39,8 +39,16 @@
 <section class="harmony"><p class="eyebrow">HARMONIA</p><div id="modes">
 <button class="active" data-mode="complementary">Complementar</button><button data-mode="analogous">Análoga</button><button data-mode="triadic">Triádica</button><button data-mode="split">Dividida</button><button data-mode="tetradic">Tetrádica</button><button data-mode="monochromatic">Monocromática</button>
 </div><p id="description">Cores opostas na roda cromática. Excelente para criar contraste e destacar elementos.</p></section>
+<section class="tools">
+<p class="eyebrow">FERRAMENTAS DA PALETA</p>
+<div class="tool-grid">
+<button id="gradientBtn">✦ Gerar gradiente</button>
+<button id="contrastBtn">◐ Analisar contraste</button>
+</div>
+<div id="toolPanel" class="tool-panel" hidden></div>
+</section>
 </aside>
-<section class="stage" id="palette"><div class="stage-actions"><button id="copyPalette" class="icon">⧉</button><button id="save" class="icon">♡</button></div></section>
+<section class="stage" id="palette"><div class="stage-actions"><button id="copyPalette" class="icon" title="Copiar paleta">⧉</button><button id="save" class="icon" title="Salvar paleta">♡</button><button id="exportCss" class="icon" title="Exportar CSS">CSS</button><button id="exportPng" class="icon" title="Exportar PNG">PNG</button><button id="share" class="icon" title="Compartilhar paleta">↗</button></div></section>
 </main>
 </div>
 <div id="scrim" hidden></div>
