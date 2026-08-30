@@ -22,7 +22,7 @@
 <aside>
 <div class="tabs"><button class="tab active" data-tab="wheel">Roda de cores</button><button class="tab" data-tab="image">Extrair de imagem</button></div>
 <section id="wheelTab">
-<div class="wheel-wrap"><div id="wheel" tabindex="0" aria-label="Selecionar cor na roda"><i id="marker"></i></div></div>
+<div class="wheel-wrap"><div id="wheel" tabindex="0" aria-label="Selecionar cor na roda"><svg id="harmonyOverlay"></svg><i id="marker"></i></div></div>
 <div class="sliders">
 <label>Saturação <output id="satOut">85%</output><input id="sat" type="range" min="0" max="100" value="85"></label>
 <label>Luminosidade <output id="lightOut">55%</output><input id="light" type="range" min="5" max="95" value="55"></label>
@@ -45,13 +45,13 @@
 <button id="gradientBtn">✦ Gerar gradiente</button>
 <button id="contrastBtn">◐ Analisar contraste</button><button id="previewBtn">▣ Preview UI</button><button id="blindBtn">◉ Daltonismo</button>
 </div>
-<div id="toolPanel" class="tool-panel" hidden></div><div id="previewPanel" class="preview-panel" hidden></div>
 </section>
 </aside>
 <section class="stage" id="palette"><div class="stage-actions"><button id="copyPalette" class="icon" title="Copiar paleta">⧉</button><button id="save" class="icon" title="Salvar paleta">♡</button><button id="exportCss" class="action-btn css-btn" title="Baixar paleta em CSS">Baixar CSS</button><button id="exportPng" class="action-btn png-btn" title="Baixar paleta como imagem PNG">⬇ Baixar paleta</button><button id="share" class="icon" title="Compartilhar paleta">↗</button></div></section>
 </main>
 </div>
 <div id="scrim" hidden></div>
+<div id="toolModal" class="tool-modal" hidden><div class="drawer-head"><h2 id="toolModalTitle">Ferramenta</h2><button id="closeTool" class="icon">✕</button></div><div id="toolModalBody"></div></div>
 <aside id="drawer" hidden><div class="drawer-head"><h2>Paletas salvas</h2><button id="close" class="icon">✕</button></div><p id="empty">Nenhuma paleta salva ainda.</p><div id="saved"></div><button id="clear">Limpar todas</button></aside>
 <div id="toast" role="status"></div>
 <script src="script.js"></script>
