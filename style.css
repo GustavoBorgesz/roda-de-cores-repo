@@ -63,3 +63,20 @@ body.light .stage-actions .png-btn{
 @media(max-width:760px){
   .stage-actions .action-btn{height:34px;padding:0 10px;font-size:.64rem}
 }
+/* Hotfix definitivo: botões de download no tema escuro */
+body:not(.light) .stage-actions button.css-btn{
+  background:#2a3140 !important;
+  background-color:#2a3140 !important;
+  color:#f6f7fb !important;
+  border:1px solid #3b4558 !important;
+}
+body:not(.light) .stage-actions button.png-btn{
+  background:#8b5cf6 !important;
+  background-color:#8b5cf6 !important;
+  color:#ffffff !important;
+  border:1px solid #a78bfa !important;
+}
+.stage-actions button.action-btn{
+  opacity:1 !important;
+  text-shadow:none !important;
+}
