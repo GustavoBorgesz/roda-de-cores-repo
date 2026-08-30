@@ -16,3 +16,50 @@ body.light .stage-actions .icon{background:rgba(255,255,255,.92);color:#18202d;b
 .png-btn{background:var(--accent);border-color:var(--accent);color:#fff}
 .action-btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
 @media(max-width:760px){.action-btn{height:34px;padding:0 8px;font-size:.65rem}.stage-actions{max-width:calc(100% - 20px);flex-wrap:wrap;justify-content:flex-end}}
+/* Correção visual dos botões de exportação */
+.stage-actions .action-btn{
+  appearance:none;
+  -webkit-appearance:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:38px;
+  min-width:max-content;
+  border-radius:10px;
+  padding:0 14px;
+  border:1px solid rgba(255,255,255,.14);
+  font-family:Inter,system-ui,sans-serif;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.01em;
+  cursor:pointer;
+  transition:transform .18s ease,filter .18s ease,box-shadow .18s ease;
+}
+.stage-actions .css-btn{
+  background:#2a3140;
+  color:#f6f7fb;
+}
+.stage-actions .png-btn{
+  background:linear-gradient(135deg,#9b6cff,#7d4ee8);
+  border-color:#a77dff;
+  color:#fff;
+  box-shadow:0 5px 16px rgba(155,108,255,.28);
+}
+.stage-actions .action-btn:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.08);
+}
+body.light .stage-actions .css-btn{
+  background:#ffffff;
+  color:#253044;
+  border-color:#d9deea;
+  box-shadow:0 4px 12px rgba(30,40,70,.08);
+}
+body.light .stage-actions .png-btn{
+  background:linear-gradient(135deg,#9b6cff,#7d4ee8);
+  color:#fff;
+  border-color:#8d62ef;
+}
+@media(max-width:760px){
+  .stage-actions .action-btn{height:34px;padding:0 10px;font-size:.64rem}
+}
