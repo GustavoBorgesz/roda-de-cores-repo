@@ -70,7 +70,7 @@ function extract(im){let n=70,ctx=canvas.getContext('2d');canvas.width=canvas.he
 drop.onclick=()=>input.click();drop.ondragover=e=>{e.preventDefault();drop.classList.add('drag')};drop.ondragleave=()=>drop.classList.remove('drag');drop.ondrop=e=>{e.preventDefault();drop.classList.remove('drag');imageFile(e.dataTransfer.files[0])};input.onchange=()=>imageFile(input.files[0]);
 $('#favorites').onclick=()=>{$('#drawer').hidden=false;$('#scrim').hidden=false};function close(){$('#drawer').hidden=true;$('#scrim').hidden=true}$('#close').onclick=close;$('#clear').onclick=()=>{saved=[];localStorage.removeItem('chromatica-palettes');renderSaved();show('Paletas removidas')};window.onresize=()=>{markerPos();drawHarmonyOverlay()};render();renderSaved();
 function openTool(title){$('#toolModalTitle').textContent=title;$('#toolModal').hidden=false;$('#scrim').hidden=false}
-function closeTool(){$('#toolModal').hidden=true}
+function closeTool(){$('#toolModal').hidden=true;$('#scrim').hidden=true}
 function closeOverlays(){close();closeTool()}
 $('#closeTool').onclick=closeTool;
 $('#scrim').onclick=closeOverlays;
