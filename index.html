@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Chromatica: ferramenta interativa para explorar teoria das cores e criar paletas.">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#9b6cff">
+<link rel="icon" href="icons/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-512.png">
 <title>Chromatica — Roda de Cores</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -56,5 +60,5 @@
 <div id="toolModal" class="tool-modal" hidden><div class="drawer-head"><h2 id="toolModalTitle">Ferramenta</h2><button id="closeTool" class="icon">✕</button></div><div id="toolModalBody"></div></div>
 <aside id="drawer" hidden><div class="drawer-head"><h2>Paletas salvas</h2><button id="close" class="icon">✕</button></div><p id="empty">Nenhuma paleta salva ainda.</p><div id="saved"></div><button id="clear">Limpar todas</button></aside>
 <div id="toast" role="status"></div>
-<script src="script.js?v=20260830c"></script>
+<script type="module" src="app.js?v=1.0.0"></script>
 </body></html>

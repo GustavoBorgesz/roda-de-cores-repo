@@ -8,7 +8,22 @@
 
 O **Chromatica** é uma aplicação web desenvolvida para facilitar o estudo e a experimentação com cores. A ferramenta permite selecionar cores diretamente em uma roda cromática, ajustar seus valores e gerar diferentes tipos de harmonias automaticamente.
 
-O projeto foi construído com **HTML, CSS e JavaScript puro**, sem frameworks ou bibliotecas externas.
+O projeto foi construído com **TypeScript, compilado para ES Modules nativos do navegador** — sem framework de UI nem bundler; o próprio navegador carrega os módulos.
+
+## 🛠️ Desenvolvimento
+
+O código-fonte fica em `src/*.ts`. Os arquivos `app.js` e `colorMath.js` na raiz são o resultado compilado, comitados no repositório para o GitHub Pages servir diretamente (sem passo de build no deploy).
+
+```bash
+npm install       # instala TypeScript e Vitest
+npm run build     # compila src/*.ts -> app.js e colorMath.js
+npm test          # roda os testes automatizados (Vitest)
+npm run watch     # recompila automaticamente ao salvar
+```
+
+Depois de editar `src/*.ts`, rode `npm run build` e comite tanto o `.ts` quanto o `.js` gerado — o workflow de CI (`.github/workflows/ci.yml`) falha o build se os dois ficarem fora de sincronia.
+
+A lógica pura de cor (`src/colorMath.ts`) tem cobertura de testes em `test/colorMath.test.ts`.
 
 ## 🚀 Funcionalidades
 
